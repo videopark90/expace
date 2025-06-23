@@ -1,1 +1,74 @@
-# expace
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>Expace Portfolio - Scroll Top</title>
+  <style>
+    /* 기본 스타일 */
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      overflow-x: hidden;
+      scroll-behavior: smooth; /* 스무스 스크롤 */
+    }
+
+    /* 긴 이미지 */
+    .container img {
+      width: 100%;
+      display: block;
+    }
+
+    /* 스크롤 탑 버튼 */
+    #scrollToTop {
+      position: fixed;
+      right: 30px;
+      bottom: 30px;
+      padding: 10px 20px;
+      background: #333;
+      color: #fff;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      opacity: 0.7;
+      transition: opacity 0.3s ease;
+      display: none; /* 처음엔 숨김 */
+    }
+
+    #scrollToTop:hover {
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 긴 이미지 -->
+  <div class="container">
+    <img src="images/long_image.png" alt="Long Image">
+  </div>
+
+  <!-- TOP 버튼 -->
+  <button id="scrollToTop">TOP</button>
+
+  <!-- 스크립트: 버튼 동작 + 표시/숨김 -->
+  <script>
+    const scrollToTopBtn = document.getElementById('scrollToTop');
+
+    scrollToTopBtn.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > window.innerHeight) {
+        scrollToTopBtn.style.display = 'block';
+      } else {
+        scrollToTopBtn.style.display = 'none';
+      }
+    });
+  </script>
+
+</body>
+</html>
