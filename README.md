@@ -13,10 +13,32 @@
       scroll-behavior: smooth; /* 스무스 스크롤 */
     }
 
-    /* 긴 이미지 */
+    /* 긴 이미지 컨테이너 */
+    .container {
+      position: relative;
+    }
+
     .container img {
       width: 100%;
       display: block;
+    }
+
+    /* 유튜브 버튼 */
+    .youtube-button {
+      position: absolute;
+      top: 820px; /* ← 원하는 위치에 따라 조절 가능 (스크린샷 기준) */
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 12px 24px;
+      background-color: #ffffff;
+      color: #1A1AFF;
+      border: 2px solid #1A1AFF;
+      border-radius: 30px;
+      font-weight: bold;
+      text-decoration: none;
+      font-size: 16px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      z-index: 10;
     }
 
     /* 스크롤 탑 버튼 */
@@ -40,17 +62,23 @@
     }
   </style>
 </head>
+
 <body>
 
-  <!-- 긴 이미지 -->
+  <!-- 이미지 + 유튜브 버튼 -->
   <div class="container">
     <img src="images/long_image.png" alt="Long Image">
+
+    <!-- 유튜브 링크 버튼 -->
+    <a class="youtube-button" href="https://youtu.be/NhTEG1C3cIc" target="_blank">
+      🎬 프로모션 영상 보러가기
+    </a>
   </div>
 
   <!-- TOP 버튼 -->
   <button id="scrollToTop">TOP</button>
 
-  <!-- 스크립트: 버튼 동작 + 표시/숨김 -->
+  <!-- 스크립트: TOP 버튼 동작 -->
   <script>
     const scrollToTopBtn = document.getElementById('scrollToTop');
 
