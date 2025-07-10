@@ -13,7 +13,7 @@
       scroll-behavior: smooth; /* 스무스 스크롤 */
     }
 
-    /* 긴 이미지 컨테이너 */
+    /* 이미지 컨테이너 */
     .container {
       position: relative;
     }
@@ -23,20 +23,21 @@
       display: block;
     }
 
-    /* 유튜브 버튼 */
+    /* 유튜브 버튼 (본문 하단 중앙 위치) */
     .youtube-button {
-    position: absolute;
-    top : 200px;
-    left: 14%;
-    transform: translateX(-50%);
-    padding: 12px 24px;
-    color: #FFFFFF;
-    border: 2px solid #FFFFFF;
-    font-weight: bold;
-    text-decoration: none;
-    font-size: 16px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    z-index: 10;
+      position: absolute;
+      top: 640px; /* 이미지 높이 1080 기준, 하단 본문 위치에 맞춤 */
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 12px 24px;
+      color: #FFFFFF;
+      border: 2px solid #FFFFFF;
+      font-weight: bold;
+      text-decoration: none;
+      font-size: 16px;
+      background: transparent;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      z-index: 10;
     }
 
     /* 스크롤 탑 버튼 */
@@ -67,7 +68,7 @@
   <div class="container">
     <img src="images/long_image.png" alt="Long Image">
 
-    <!-- 유튜브 링크 버튼 -->
+    <!-- 유튜브 링크 버튼 (하단 중앙) -->
     <a class="youtube-button" href="https://www.youtube.com/embed/NhTEG1C3cIc" target="_blank">
       프로모션 영상 보러가기
     </a>
