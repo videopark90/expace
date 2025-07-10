@@ -40,6 +40,7 @@
     }
   </style>
 </head>
+  
 <body>
 
   <!-- 긴 이미지 -->
@@ -49,6 +50,18 @@
 
   <!-- TOP 버튼 -->
   <button id="scrollToTop">TOP</button>
+
+  <div class="container" style="position: relative;">
+  <img src="images/long_image.png" alt="Long Image" style="width: 100%; display: block;">
+
+  <!-- 프로모션 영상 링크 버튼 (디자인된 버튼 위치에 덮어씌움) -->
+  <a href="https://youtu.be/NhTEG1C3cIc" target="_blank"
+     style="position: absolute; top: 74%; left: 50%; transform: translateX(-50%);
+            background: transparent; border: none; cursor: pointer; width: 300px; height: 50px;">
+    <!-- 보이지 않는 클릭 영역 -->
+  </a>
+</div>
+
 
   <!-- 스크립트: 버튼 동작 + 표시/숨김 -->
   <script>
