@@ -10,12 +10,13 @@
       padding: 0;
       width: 100%;
       overflow-x: hidden;
-      scroll-behavior: smooth; /* 스무스 스크롤 */
+      scroll-behavior: smooth;
     }
 
     /* 이미지 컨테이너 */
     .container {
       position: relative;
+      width: 100%;
     }
 
     .container img {
@@ -23,29 +24,30 @@
       display: block;
     }
 
-    /* 유튜브 버튼 (본문 하단 중앙 위치) */
+    /* 유튜브 버튼 (이미지 안에서 상대 위치, 반응형) */
     .youtube-button {
       position: absolute;
-      top: 900px; /* 이미지 높이 1080 기준, 하단 본문 위치에 맞춤 */
-      left: 11.5%;
+      top: 72.7%; /* 이미지 높이 비율로 위치 조정 */
+      left: 50%;
       transform: translateX(-50%);
       padding: 12px 24px;
+      background: transparent;
       color: #FFFFFF;
       border: 2px solid #FFFFFF;
+      border-radius: 30px;
       font-weight: bold;
       text-decoration: none;
-      font-size: 16px;
-      background: transparent;
+      font-size: clamp(14px, 1.2vw, 18px); /* 반응형 글자 크기 */
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      white-space: nowrap;
       z-index: 10;
     }
 
     .youtube-button:hover {
-  background-color: #FFFFFF;     /* 배경: 흰색 */
-  color: #4A5CFE;                /* 텍스트: 보라색 (브랜드 컬러 예시) */
-  border-color: #4A5CFE;         /* 테두리 유지 */
-}
-
+      background-color: #FFFFFF;
+      color: #4A5CFE;
+      border-color: #4A5CFE;
+    }
 
     /* 스크롤 탑 버튼 */
     #scrollToTop {
@@ -60,7 +62,8 @@
       cursor: pointer;
       opacity: 0.7;
       transition: opacity 0.3s ease;
-      display: none; /* 처음엔 숨김 */
+      display: none;
+      z-index: 999;
     }
 
     #scrollToTop:hover {
@@ -75,16 +78,16 @@
   <div class="container">
     <img src="images/long_image.png" alt="Long Image">
 
-    <!-- 유튜브 링크 버튼 (하단 중앙) -->
-    <a class="youtube-button" href="https://www.youtube.com/embed/NhTEG1C3cIc" target="_blank">
-      프로모션 영상 보러가기
+    <!-- 유튜브 링크 버튼 -->
+    <a class="youtube-button" href="https://youtu.be/NhTEG1C3cIc" target="_blank">
+     프로모션 영상 보러가기
     </a>
   </div>
 
   <!-- TOP 버튼 -->
   <button id="scrollToTop">TOP</button>
 
-  <!-- 스크립트: TOP 버튼 동작 -->
+  <!-- TOP 버튼 스크립트 -->
   <script>
     const scrollToTopBtn = document.getElementById('scrollToTop');
 
