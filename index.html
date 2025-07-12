@@ -13,8 +13,10 @@
     }
 
     img {
-      width: 100%;
+      width: 1680px; /* 고정 해상도 기준 */
+      max-width: 100%;
       display: block;
+      margin: 0 auto;
     }
 
     #scrollToTop {
@@ -27,40 +29,3 @@
       border: none;
       border-radius: 30px;
       cursor: pointer;
-      opacity: 0.7;
-      transition: opacity 0.3s ease;
-      display: none;
-      z-index: 999;
-    }
-
-    #scrollToTop:hover {
-      opacity: 1;
-    }
-  </style>
-</head>
-
-<body>
-
-  <!-- 이미지 + 클릭 가능한 영역 연결 -->
-  <img src="images/long_image.png" usemap="#promoMap" alt="Expace Portfolio">
-
-  <!-- 좌표 기반 유튜브 링크 영역 -->
-  <map name="promoMap">
-    <area shape="rect" coords="850,830,1080,870" href="https://youtu.be/NhTEG1C3cIc" target="_blank" alt="프로모션 영상">
-  </map>
-
-  <!-- TOP 버튼 -->
-  <button id="scrollToTop">TOP</button>
-
-  <script>
-    const scrollToTopBtn = document.getElementById('scrollToTop');
-    scrollToTopBtn.addEventListener('click', () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-    window.addEventListener('scroll', () => {
-      scrollToTopBtn.style.display = window.scrollY > window.innerHeight ? 'block' : 'none';
-    });
-  </script>
-
-</body>
-</html>
