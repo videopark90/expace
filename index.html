@@ -9,6 +9,7 @@
       padding: 0;
       width: 100%;
       overflow-x: hidden;
+      scroll-behavior: smooth;
     }
 
     img {
@@ -37,15 +38,15 @@
     }
   </style>
 </head>
+
 <body>
 
-  <!-- 이미지 + 맵 연결 -->
+  <!-- 이미지 + 클릭 가능한 영역 연결 -->
   <img src="images/long_image.png" usemap="#promoMap" alt="Expace Portfolio">
 
-  <!-- 클릭 가능한 영역 정의 -->
+  <!-- 좌표 기반 유튜브 링크 영역 -->
   <map name="promoMap">
-    <!-- 이 부분 좌표는 예시 (1920x1080 기준). 너가 알려주면 조정해줄게 -->
-    <area shape="rect" coords="810,800,1110,860" href="https://youtu.be/NhTEG1C3cIc" target="_blank" alt="프로모션 영상">
+    <area shape="rect" coords="850,830,1080,870" href="https://youtu.be/NhTEG1C3cIc" target="_blank" alt="프로모션 영상">
   </map>
 
   <!-- TOP 버튼 -->
