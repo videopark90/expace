@@ -7,14 +7,11 @@
     html, body {
       margin: 0;
       padding: 0;
-      width: 100%;
-      overflow-x: hidden;
       scroll-behavior: smooth;
     }
 
     img {
-      width: 1680px; /* 고정 해상도 기준 */
-      max-width: 100%;
+      width: 1680px; /* 고정 */
       display: block;
       margin: 0 auto;
     }
@@ -43,12 +40,11 @@
 
 <body>
 
-  <!-- 이미지와 클릭 가능한 영역 연결 -->
+  <!-- 이미지 + 클릭 맵 -->
   <img src="images/long_image.png" usemap="#promoMap" alt="Expace Portfolio">
 
   <map name="promoMap">
-    <!-- 실해상도(1680px) 기준 유튜브 버튼 좌표 -->
-    <area shape="rect" coords="740,730,940,770" href="https://youtu.be/NhTEG1C3cIc" target="_blank" alt="프로모션 영상">
+    <area shape="rect" coords="1377,394,2165,525" href="https://youtu.be/NhTEG1C3cIc" target="_blank" alt="프로모션 영상">
   </map>
 
   <!-- TOP 버튼 -->
