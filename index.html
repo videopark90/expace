@@ -8,12 +8,17 @@
       margin: 0;
       padding: 0;
       scroll-behavior: smooth;
+      background-color: #fff;
     }
 
-    img {
-      width: 1680px; /* 고정 */
-      display: block;
+    .image-wrapper {
+      width: 1680px;
       margin: 0 auto;
+    }
+
+    .image-wrapper img {
+      width: 100%;
+      display: block;
     }
 
     #scrollToTop {
@@ -40,23 +45,28 @@
 
 <body>
 
-  <!-- 이미지 + 클릭 맵 -->
-  <img src="images/long_image.png" usemap="#promoMap" alt="Expace Portfolio">
-
-  <map name="promoMap">
-    <area shape="rect" coords="1377,394,2165,525" href="https://youtu.be/NhTEG1C3cIc" target="_blank" alt="프로모션 영상">
-  </map>
+  <!-- 이미지 + 이미지 맵 -->
+  <div class="image-wrapper">
+    <img src="images/long_image.png" usemap="#promoMap" alt="Expace Portfolio">
+    <map name="promoMap">
+      <!-- 1680px 기준 좌표 -->
+      <area shape="rect" coords="1377,394,2165,525" href="https://youtu.be/NhTEG1C3cIc" target="_blank" alt="프로모션 영상">
+    </map>
+  </div>
 
   <!-- TOP 버튼 -->
   <button id="scrollToTop">TOP</button>
 
   <script>
-    const scrollToTopBtn = document.getElementById('scrollToTop');
-    scrollToTopBtn.addEventListener('click', () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-    window.addEventListener('scroll', () => {
-      scrollToTopBtn.style.display = window.scrollY > window.innerHeight ? 'block' : 'none';
+    document.addEventListener("DOMContentLoaded", () => {
+      const scrollToTopBtn = document.getElementById('scrollToTop');
+      scrollToTopBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+
+      window.addEventListener('scroll', () => {
+        scrollToTopBtn.style.display = window.scrollY > window.innerHeight ? 'block' : 'none';
+      });
     });
   </script>
 
