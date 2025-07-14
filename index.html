@@ -12,14 +12,37 @@
     }
 
     .image-wrapper {
+      position: relative;
       width: 1680px;
       margin: 0 auto;
     }
 
     .image-wrapper img {
-      width: 1680px;       /* 고정 */
-      max-width: none;
+      width: 1680px;
       display: block;
+    }
+
+    .youtube-button {
+      position: absolute;
+      top: 395px; /* 이미지 내 위치 조정 필요시 여기만 바꾸세요 */
+      left: 1380px;
+      transform: translate(-50%, -50%);
+      background: transparent;
+      color: #fff;
+      border: 2px solid #fff;
+      padding: 12px 24px;
+      font-size: 16px;
+      border-radius: 30px;
+      font-weight: bold;
+      text-decoration: none;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      transition: 0.3s;
+    }
+
+    .youtube-button:hover {
+      background-color: #ffffff;
+      color: #4A5CFE;
+      border-color: #4A5CFE;
     }
 
     #scrollToTop {
@@ -46,18 +69,20 @@
 
 <body>
 
-  <!-- 이미지 + 이미지 맵 -->
+  <!-- 이미지와 버튼 포함 -->
   <div class="image-wrapper">
-    <img src="images/long_image.png" usemap="#promoMap" alt="Expace Portfolio">
-    <map name="promoMap">
-      <!-- 좌표 기준: 1680px -->
-      <area shape="rect" coords="1377,394,2165,525" href="https://youtu.be/NhTEG1C3cIc" target="_blank" alt="프로모션 영상">
-    </map>
+    <img src="images/long_image.png" alt="Expace Portfolio">
+    
+    <!-- 유튜브 이동 버튼 -->
+    <a class="youtube-button" href="https://youtu.be/NhTEG1C3cIc" target="_blank">
+      🎬 프로모션 영상 보러가기
+    </a>
   </div>
 
   <!-- TOP 버튼 -->
   <button id="scrollToTop">TOP</button>
 
+  <!-- 스크립트 -->
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       const scrollToTopBtn = document.getElementById('scrollToTop');
